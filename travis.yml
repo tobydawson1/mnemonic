@@ -1,20 +1,15 @@
+sudo: true
 language: node_js
 node_js:
-  - "12"
-  - "4"
-import:
-  - ljharb/travis-ci:node/latest-npm.yml
-install:
-  - 'npm install'
-  - 'npm run clean-local-npm'
-before_script:
-  - './node_modules/.bin/lerna bootstrap'
-  - './node_modules/.bin/lerna run build'
-  - 'sh install-relevant-react.sh'
-  - 'if [ -n "${KARMA-}" ]; then export CHROME_BIN=chromium-browser; export DISPLAY=:99.0; sh -e /etc/init.d/xvfb start; fi'
-script:
-  - 'if [ -n "${LINT-}" ]; then npm run lint; elif [ -n "${KARMA-}" ]; then npm run test:karma -- --single-run; elif [ -n "${REACT-}" ]; then npm run travis; else false ; fi'
-after_script:
-  - 'if [ -n "${REACT-}" ] && [ "${TRAVIS_ALLOW_FAILURE}" != true ]; then case "${TRAVIS_NODE_VERSION}" in "8" | "6") ;; *) cat ./coverage/lcov.info | ./node_modules/.bin/coveralls ;; esac ; fi'
-  - 'if [ -n "${REACT-}" ] && [ "${TRAVIS_ALLOW_FAILURE}" != true ]; then bash <(curl -s https://codecov.io/bash) -f coverage/*.json; fi'
-sudo: false
+- node
+git:
+  quiet: true
+cache: npm
+before_install:
+- openssl aes-256-cbc -K $encrypted_xxxxxx_key -iv $encrypted_xxxxxx_iv
+  -in travis_rsa.enc -out travis_rsa -d
+- chmod 600 travis_rsa
+- mv travis_rsa ~/.ssh/id_rsa
+- cat server.pub >> $HOME/.ssh/known_hosts
+after_success:
+- bash ./deploy.sh
