@@ -23,7 +23,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "test:coverage": "jest --coverage",
-    "test:coveralls": "jest --coverage && coveralls < coverage/lcov.info",
+    "test:coveralls": "jest --coverage && coveralls < coverage/lcov.info"
   },
   "eslintConfig": {
     "extends": "react-app"
