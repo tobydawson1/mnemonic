@@ -8,11 +8,13 @@
     "JS code coverage",
     "JS coverage"
   ],
-    "jest": {
-      "collectCoverageFrom": [
-        "src/**/{!(app.test),}.js"
-      ]
-    },
+  "jest": {
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "package.json",
+      "package-lock.json"
+    ]
+  },
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
