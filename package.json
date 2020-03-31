@@ -21,9 +21,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "test:coverage": "jest --coverage",
-    "test:coveralls": "jest --coverage && coveralls < coverage/lcov.info"
+    "test": "NODE_ENV=test NODE_PATH=./src mocha --compilers js:babel-core/register 'test/**/*.test.jsx' --recursive --require 'test/setup.jsx'",
+    "test:cov": "NODE_ENV=test NODE_PATH=./src babel-node -- ./node_modules/.bin/isparta cover -x 'dist/*.js' --include '**/*.js' --include '**/*.jsx' _mocha -- 'test/**/*.test.jsx' --recursive --require 'test/setup.jsx'"
   },
   "eslintConfig": {
     "extends": "react-app"
