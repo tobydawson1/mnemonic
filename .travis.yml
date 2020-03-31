@@ -2,6 +2,9 @@ sudo: true
 language: node_js
 node_js:
 - node
+env:
+  global:
+  - CC_TEST_REPORTER_ID=cb13072c1df970a1e96ce94c7de8e6c09b89a1fd6b4ec8a55163a937bc4b03be
 branches:
   only:
   - master
@@ -12,5 +15,11 @@ before_install:
 - npm update
 install:
 - npm install
+before script:
+- curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+- chmod +x ./cc-test-reporter
+- ./cc-test-reporter before-build
 script:
 - npm test
+after_script:
+  - ./cc-test-reporter after-build -t icov --exit-code $TRAVIS_TEST_RESULT
