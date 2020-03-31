@@ -1,3 +1,7 @@
 language: node_js
-node_js:
-  - 13.11.0
+node_js: node
+cache: npm
+script:
+  - npm test
+after_success:
+  - npm run coverage
