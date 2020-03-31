@@ -1,16 +1,13 @@
-
 {
-    "name": "istanbul",
-    "version": "0.4.5",
-    "description": "Yet another JS code coverage tool that computes statement, line, function and branch coverage with module loader hooks to transparently add coverage when running tests. Supports all JS coverage use cases including unit tests, server side functional tests and browser tests. Built for scale",
-    "keywords": [
-      "coverage",
-      "code coverage",
-      "JS code coverage",
-      "JS coverage"
-    ],
   "name": "simple-react-jest",
   "version": "0.1.0",
+  "description": "Yet another JS code coverage tool that computes statement, line, function and branch coverage with module loader hooks to transparently add coverage when running tests. Supports all JS coverage use cases including unit tests, server side functional tests and browser tests. Built for scale",
+  "keywords": [
+    "coverage",
+    "code coverage",
+    "JS code coverage",
+    "JS coverage"
+  ],
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
@@ -25,6 +22,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -49,6 +47,7 @@
   "devDependencies": {
     "@babel/preset-env": "^7.9.0",
     "@babel/preset-react": "^7.9.4",
+    "coveralls": "^3.0.11",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "react-test-renderer": "^16.13.1"
