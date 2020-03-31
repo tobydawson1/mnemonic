@@ -10,7 +10,7 @@
   ],
     "jest": {
       "collectCoverageFrom": [
-        "src/**/{!(card_set),}.js"
+        "src/**/{!(app.test),}.js"
       ]
     },
   "private": true,
