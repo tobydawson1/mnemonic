@@ -8,6 +8,11 @@
     "JS code coverage",
     "JS coverage"
   ],
+    "jest": {
+      "collectCoverageFrom": [
+        "src/**/{!(app.test),}.js"
+      ]
+    },
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
