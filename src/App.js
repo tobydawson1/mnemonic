@@ -17,7 +17,7 @@ export default function App() {
 
   return (
     <div className="App">
-      <h1>mnemonic barimonic mnemonic</h1>
+      <h1>mnemonic  mnemonic</h1>
       <Board
         cards={cards}
         flipped={flipped}
