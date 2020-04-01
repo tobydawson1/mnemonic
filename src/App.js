@@ -5,7 +5,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>mnemonic</h1>
+      <h1>mnemonic is live</h1>
     </div>
   );
 };
