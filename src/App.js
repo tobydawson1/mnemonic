@@ -1,5 +1,5 @@
 import React, { useState, useEffect} from 'react'
-import './App.scss'
+
 import Board from './components/board'
 
 import initializDeck from './deck'
