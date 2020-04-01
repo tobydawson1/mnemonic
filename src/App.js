@@ -1,13 +1,25 @@
-import React from 'react';
-import './App.scss';
+import React, { useState } from 'react';
+import Card from './components/card/Card';
+import './styles/App.scss';
 
-function App() {
+export default function App() {
+  const [flipped, setFlipped] = useState([])
+
+  const handleClick = (id) => setFlipped([...flipped, id])
 
   return (
     <div className="App">
-      <h1>mnemonic is live</h1>
-    </div>
-  );
-};
+      <h1>mnemonic</h1>
 
-export default App;
+      <Card
+        id={1}
+        width={200}
+        height={200}
+        back={'card_set/back.svg'}
+        front={'card_set/yellow.svg'}
+        flipped={flipped.includes(1)}
+        handleClick={() => handleClick(1)}
+      />
+    </div>
+  )
+}
