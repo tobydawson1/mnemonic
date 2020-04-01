@@ -1,16 +1,27 @@
-import React, { useState } from 'react';
-import Card from './components/card/Card';
-import './styles/App.scss';
+import React, { useState, useEffect} from 'react'
+import './App.scss'
+import Board from './components/board'
+
+import initializDeck from './deck'
 
 export default function App() {
+  const [cards, setCards]=useState([])
   const [flipped, setFlipped] = useState([])
 
+  useEffect(() => {
+    setCards(initializDeck())
+  }, [])
+
   const handleClick = (id) => setFlipped([...flipped, id])
+  
 
   return (
     <div className="App">
-      <h1>mnemonic</h1>
-
+      <h1>mnemonic barimonic mnemonic</h1>
+      <Board
+        cards={cards}
+        flipped={flipped}
+        handleClick={handleClick}/>
     </div>
   )
 }
