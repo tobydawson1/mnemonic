@@ -1,22 +1,30 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import { render } from '@testing-library/react';
 import App from './App';
+import Card from './components/card/Card';
 
 describe('Testing the starter App with enzyme and jest', () => {
-
+  
   let wrapper;
   beforeEach(() => {
     wrapper = mount(<App />);
   });
 
   test('test the word mnemonic with enzyme', () => {
-    expect(wrapper.find('h1').text()).toContain('mnemonic is live');
+    expect(wrapper.find('h1').text()).toContain('mnemonic');
   });
     
   test('test mnemonic with the default jest way', () => {
     const { getByText } = render(<App />);
-    const linkElement = getByText(/mnemonic is live/i);
+    const linkElement = getByText(/mnemonic/i);
     expect(linkElement).toBeInTheDocument();
   }); 
+
+  it('app should contain a card', () => {
+    const wrapper = shallow(<App />);
+    const card = wrapper.find(Card); 
+    expect(card).toBe;
+  });
 });
+
