@@ -11,15 +11,6 @@ export default function App() {
     <div className="App">
       <h1>mnemonic</h1>
 
-      <Card
-        id={1}
-        width={200}
-        height={200}
-        back={'card_set/back.svg'}
-        front={'card_set/yellow.svg'}
-        flipped={flipped.includes(1)}
-        handleClick={() => handleClick(1)}
-      />
     </div>
   )
 }
