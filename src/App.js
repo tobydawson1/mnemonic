@@ -14,6 +14,12 @@ export default function App() {
     setCards(initializDeck())
   }, [])
 
+  useEffect(() => {
+    const resizeListener = window.addEventListener('resize', resizeBoard)
+
+    return () => window.removeEventListener('resize', resizeListener)
+  })
+
   const handleClick = (id) => setFlipped([...flipped, id])
   
   const resizeBoard = () => {
@@ -27,8 +33,10 @@ export default function App() {
 
   return (
     <div className="App">
-      <h1>mnemonic  mnemonic</h1>
+      <h1>mnemonic</h1>
+      <h2>Can you remeber where the cards are?</h2>
       <Board
+        dimension={dimension}
         cards={cards}
         flipped={flipped}
         handleClick={handleClick}/>
