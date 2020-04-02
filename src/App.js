@@ -8,6 +8,8 @@ export default function App() {
   const [cards, setCards]=useState([])
   const [flipped, setFlipped] = useState([])
   const [dimension, setDimension] = useState(400)
+  const [solved, setSolved] = useState([])
+  const [disabled, setDisabled] = useState(false)
 
   useEffect(() => {
     resizeBoard()
@@ -20,7 +22,20 @@ export default function App() {
     return () => window.removeEventListener('resize', resizeListener)
   })
 
-  const handleClick = (id) => setFlipped([...flipped, id])
+  const handleClick = (id) => { 
+    setDisabled(true) 
+    if (flipped.length === 0) {
+      setFlipped([id])
+      setDisabled(false)
+    } else {
+      if (sameCardClicked(id)) return
+      setFlipped([flipped[0], id])
+      if(isMatch(id)) {
+        setSolved([...solved, flipped[0], id])
+      }
+    }
+  }
+
   
   const resizeBoard = () => {
     setDimension(
@@ -39,7 +54,8 @@ export default function App() {
         dimension={dimension}
         cards={cards}
         flipped={flipped}
-        handleClick={handleClick}/>
+        handleClick={handleClick}
+        disabled={disabled}/>
     </div>
   )
 }

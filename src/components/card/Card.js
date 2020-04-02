@@ -10,6 +10,7 @@ export default function Card({
   type,
   height, 
   width,
+  disabled
 }){
   return (<div 
   className={`flip-container ${flipped ? 'flipped' : ''} `}
@@ -17,7 +18,7 @@ export default function Card({
     width, 
     height,
   }}
-  onClick = {()=> handleClick(id)}
+  onClick = {()=> disabled ? null : handleClick(id)}
   >
     <div className='flipper'>
       <img alt=""
@@ -39,5 +40,6 @@ Card.propTypes = {
   type: PropTypes.string.isRequired,
   height: PropTypes.number.isRequired,
   width: PropTypes.number.isRequired,
+  disabled: PropTypes.bool.isRequired,
 
 }

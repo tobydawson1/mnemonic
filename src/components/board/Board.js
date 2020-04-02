@@ -6,7 +6,7 @@ import Card from '../card/Card'
 import './style.css'
 
 export default function Board({
-  dimension, cards, flipped, handleClick
+ disabled, dimension, cards, flipped, handleClick
 }) {
 return (
     <div className="board">
@@ -19,13 +19,15 @@ return (
           width={dimension / 4.5 }
           height={dimension / 4.5}
           flipped={flipped.includes(card.id)}
-          handleClick={() => handleClick(card.id)}
+          handleClick={handleClick}
+          disabled={disabled}
           />
         ))}
     </div>
   )
 }
 Board.propTypes = {
+disabled: PropTypes.bool.isRequired,
 dimension: PropTypes.number.isRequired,
 cards: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
 flipped: PropTypes.arrayOf(PropTypes.number).isRequired,
