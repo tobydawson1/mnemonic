@@ -1,7 +1,6 @@
 import React, { useState, useEffect} from 'react'
-
+import'./styles/App.scss';
 import Board from './components/board/Board'
-
 import initializDeck from './deck'
 
 export default function App() {
@@ -74,7 +73,7 @@ export default function App() {
   return (
     <div className="App">
       <h1>mnemonic</h1>
-      <h2>Can you remeber where the cards are?</h2>
+      <h2>can you remember where the cards are?</h2>
       <Board
         dimension={dimension}
         cards={cards}
