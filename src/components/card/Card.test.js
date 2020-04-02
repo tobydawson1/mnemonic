@@ -7,6 +7,7 @@ describe('Testing the Card', () => {
     beforeEach(() => {
         wrapper = shallow(<Card
             id={1}
+          
             width={200}
             height={200}
             back={'card_set/back.svg'}
@@ -16,7 +17,7 @@ describe('Testing the Card', () => {
         />)
     });
     it('card is not flipped', () => {
-        console.log(wrapper.debug());
+        // console.log(wrapper.debug());
         expect(wrapper.find('.flipped').exists()).toEqual(false);
     });
 });   
