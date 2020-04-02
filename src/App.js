@@ -69,7 +69,9 @@ export default function App() {
         cards={cards}
         flipped={flipped}
         handleClick={handleClick}
-        disabled={disabled}/>
+        disabled={disabled}
+        solved={solved}
+        />
     </div>
   )
 }
