@@ -32,10 +32,24 @@ export default function App() {
       setFlipped([flipped[0], id])
       if(isMatch(id)) {
         setSolved([...solved, flipped[0], id])
+        resetCards()
+      } else {
+        setTimeout(resetCards, 2000)
       }
     }
   }
 
+  const resetCards = () => {
+    setFlipped([])
+    setDisabled(false)
+  }
+  const sameCardClicked = (id) => flipped.includes(id)
+
+  const isMatch = (id) => {
+    const clickedCard = cards.find((card) => card.id === id)
+    const flippedCard = cards.find((card) => flipped[0] === card.id)
+    return flippedCard.type === clickedCard.type
+  }
   
   const resizeBoard = () => {
     setDimension(
