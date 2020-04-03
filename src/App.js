@@ -72,7 +72,7 @@ export default function App() {
   }
 
   const checkScore = (score) => {
-    if (score>5) {
+    if (score>4) {
       setWins(wins + 1);
       setTimeout(newGame, 1000);
     }
