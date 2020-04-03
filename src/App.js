@@ -18,6 +18,8 @@ export default function App() {
   useEffect(() => {
     resizeBoard()
     setCards(initializeDeck())
+    showCards()
+    setTimeout(resetCards, 2000)
   }, [])
 
   useEffect(() => {
@@ -54,7 +56,7 @@ export default function App() {
 
   const noMatch = () => {
     updateGuesses(wrongGuesses, checkGuesses);
-    setTimeout(resetCards, 2000);
+    setTimeout(resetCards, 1000);
   }
 
   function updateScore(score, callback) {
@@ -70,7 +72,7 @@ export default function App() {
   }
 
   const checkScore = (score) => {
-    if (score>4) {
+    if (score>1) {
       setWins(wins + 1);
       setTimeout(newGame, 1000);
     }
@@ -86,8 +88,14 @@ export default function App() {
   const newGame = () => { 
     setSolved([]);
     setCards(initializeDeck());
+    showCards()
+    setTimeout(resetCards, 2000)
     setWrongGuesses(0);
     setScore(0);
+  }
+
+  const showCards = () => {
+    setFlipped([0, 1, 2, 3, 4, 5, 6, 7, 8, 9,])
   }
 
   const preloadImages = () => {
