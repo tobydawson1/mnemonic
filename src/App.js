@@ -17,8 +17,10 @@ export default function App() {
 
   useEffect(() => {
     resizeBoard()
-    setCards(initializeDeck())
+    // setCards(initializeDeck())
   }, [])
+
+ 
 
   useEffect(() => {
     preloadImages()
@@ -54,7 +56,7 @@ export default function App() {
 
   const noMatch = () => {
     updateGuesses(wrongGuesses, checkGuesses);
-    setTimeout(resetCards, 2000);
+    setTimeout(resetCards, 1000);
   }
 
   function updateScore(score, callback) {
@@ -70,9 +72,9 @@ export default function App() {
   }
 
   const checkScore = (score) => {
-    if (score>4) {
+    if (score>5) {
       setWins(wins + 1);
-      setTimeout(newGame, 1000);
+      setTimeout(newGame, 2000);
     }
   }
 
@@ -121,11 +123,10 @@ export default function App() {
 
   return (
 
-    <div className="App"
-      style={{
-        textAlign: "center"
-      }}
-      >
+    <div className="App">
+      <h1>mnemonic</h1>
+      <h2>can you remember where the cards are?</h2>
+
       <Navbar 
         wins={wins}
         losses={losses}

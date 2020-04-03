@@ -1,34 +1,29 @@
 import React from "react";
-import "./Navbar.css";
+
 
 const Navbar = props => (
   <nav className="navbar navbar-expand-lg navbar-light bg-light">
     <div>
       <ul className="navbar-nav">
-      <li className="instruction">
-          <div>mnemonic</div>
-  
-            <div className="instruction">Can you remember where the cards are?</div>
+        <li className="nav-item">
+          <button className="restart" onClick={() => props.newGame()}>
+            new game!
+          </button>
         </li>
         <li className="nav-item">
-          <div className="restart" onClick={() => props.newGame()}>
-            Restart Game
-          </div>
+              <div className="wins">wins: {props.wins} </div>         
+              <div className="losses">losses: {props.losses} </div>
         </li>
         <li className="nav-item">
-         
-              <div className="wins">Wins: {props.wins} </div>         
-              <div className="losses">Losses: {props.losses} </div>
-          
-        </li>
-        <li className="nav-item">
-            <div className="score">Current Score: {props.score}/5</div>
+            <div className="score">current score: {props.score}/5</div>
 
-            <div className="wrongGuesses">Incorrect Guesses: {props.wrongGuesses}/4</div>
+            <div className="wrongGuesses">incorrect guesses: {props.wrongGuesses}/5</div>
         </li>
       </ul>
     </div>
   </nav>
 );
+
+
 
 export default Navbar;
