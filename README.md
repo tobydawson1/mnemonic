@@ -7,7 +7,7 @@
 
 [the idea](#idea) | [play](#play) | [tech](#tech)  | [collaborators](#collaborators) 
 
-## <a name="idea">the idea</a>
+## <a name="idea">the idea</a> 🃏
 
 ##### [Makers Academy](http://www.makers.tech) - week 11/12 team engineering project
 
@@ -29,8 +29,5 @@ Go to [link]()
 
 ## <a name="collaborators">collaborators</a>
 
-  * [Barri](https://github.com/)
-  * [Jack](https://github.com/)
-  * [Myrtle](https://github.com/)
-  * [Toby](https://github.com/)
+  [Barri](https://github.com/BarriF13) & [Jack](https://github.com/Ovy95) & [Myrtle](https://github.com/Mrtly) & [Toby](https://github.com/tobydawson1)
 
