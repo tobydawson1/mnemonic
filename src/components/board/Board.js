@@ -7,6 +7,7 @@ export default function Board({
 }) {
 return (
     <div className="board">
+      <div id="allcards">
       {
         cards.map((card) => (
           <Card
@@ -21,6 +22,7 @@ return (
           disabled = {disabled || solved.includes(card.id)}
           />
         ))}
+        </div>
     </div>
   )
 }
