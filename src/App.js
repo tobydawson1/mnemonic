@@ -1,9 +1,7 @@
 import React, { useState, useEffect} from 'react'
-
+import'./styles/App.scss';
 import Board from './components/board/Board'
-
 import Navbar from './components/Navbar';
-
 import initializeDeck from './deck'
 
 export default function App() {
@@ -122,6 +120,7 @@ export default function App() {
   }
 
   return (
+
     <div className="App"
       style={{
         textAlign: "center"
