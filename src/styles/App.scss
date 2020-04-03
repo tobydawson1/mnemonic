@@ -6,10 +6,12 @@
   background-color: aquamarine;
   height: 100vh;
   padding-top: 2em;
-  h1 { font-size: 2.5em}
-  h1, h2 {padding-bottom: 1em};
+  h1 { font-size: 2.5em; padding-bottom: 0.5em}
+  h2{padding-bottom: 1em};
   img { cursor: pointer; }
 }
+
+#allcards{animation: 1s fadein ease-out;} //this is not working yet
 
 .flip-container{
   perspective: 1000px;
@@ -41,3 +43,23 @@
 .front {
   transform: rotateY(180deg);
 }
+@keyframes fadein {
+  0% {
+      transform: translateY(-300px);
+      opacity: 0
+  }
+  100% {
+      transform: translateY(0);
+      opacity: 100%
+  }
+}
+
+//for gamebar
+nav {
+  margin-bottom: 0.8em;
+  .nav-item {
+    padding-bottom: 0.5em;
+  }
+}
+li {list-style: none}
+button {padding: 0.4em; font-family: "Comic Neue", sans-serif;font-size:1.1em;cursor: pointer;letter-spacing: 2px }
