@@ -74,22 +74,28 @@ export default function App() {
   const checkScore = (score) => {
     if (score>5) {
       setWins(wins + 1);
-      setTimeout(newGame, 2000);
+      setTimeout(newGame, 1000);
     }
   }
 
   const checkGuesses = (wrongGuesses) => {
     if (wrongGuesses>3) {
       setLosses(losses + 1);
-      setTimeout(newGame, 2000);
+      setTimeout(newGame, 1000);
     }
   }
 
   const newGame = () => { 
     setSolved([]);
     setCards(initializeDeck());
+    showCards()
+    setTimeout(resetCards, 2000)
     setWrongGuesses(0);
     setScore(0);
+  }
+
+  const showCards = () => {
+    setFlipped([0, 1, 2, 3, 4, 5, 6, 7, 8, 9,])
   }
 
   const preloadImages = () => {
