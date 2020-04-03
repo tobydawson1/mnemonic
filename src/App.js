@@ -1,7 +1,8 @@
 import React, { useState, useEffect} from 'react'
 import'./styles/App.scss';
 import Board from './components/board/Board'
-import initializDeck from './deck'
+import Navbar from './components/Navbar';
+import initializeDeck from './deck'
 
 export default function App() {
   const [cards, setCards]=useState([])
@@ -9,10 +10,14 @@ export default function App() {
   const [dimension, setDimension] = useState(400)
   const [solved, setSolved] = useState([])
   const [disabled, setDisabled] = useState(false)
+  const [score, setScore] = useState(0);
+  const [wins, setWins] = useState(0);
+  const [wrongGuesses, setWrongGuesses] = useState(0);
+  const [losses, setLosses] = useState(0);
 
   useEffect(() => {
     resizeBoard()
-    setCards(initializDeck())
+    setCards(initializeDeck())
   }, [])
 
   useEffect(() => {
@@ -21,25 +26,68 @@ export default function App() {
 
   useEffect(() => {
     const resizeListener = window.addEventListener('resize', resizeBoard)
-
     return () => window.removeEventListener('resize', resizeListener)
   })
 
-  const handleClick = (id) => { 
-    setDisabled(true) 
+  useEffect(() => {
+    checkScore();
+  }, [score]); // Only re-run the effect if count changes
+
+  const handleClick = (id) => {
+    setDisabled(true);
     if (flipped.length === 0) {
       setFlipped([id])
       setDisabled(false)
-    } else {
+    }
+    else {
       if (sameCardClicked(id)) return
-      setFlipped([flipped[0], id])
-      if(isMatch(id)) {
-        setSolved([...solved, flipped[0], id])
-        resetCards()
+      setFlipped([flipped[0],id])
+      if (isMatch(id)) {
+        setSolved([...solved, flipped[0], id]);
+        resetCards();
+        updateScore(score, checkScore);
       } else {
-        setTimeout(resetCards, 2000)
+        noMatch();
       }
     }
+  }
+
+  const noMatch = () => {
+    updateGuesses(wrongGuesses, checkGuesses);
+    setTimeout(resetCards, 2000);
+  }
+
+  function updateScore(score, callback) {
+    var newScore = score + 1;
+    setScore(score + 1);
+    callback(newScore);
+  }
+
+  function updateGuesses(wrongGuesses, callback) {
+    var newGuesses = wrongGuesses + 1;
+    setWrongGuesses(wrongGuesses + 1);
+    callback(newGuesses);
+  }
+
+  const checkScore = (score) => {
+    if (score>4) {
+      setWins(wins + 1);
+      setTimeout(newGame, 1000);
+    }
+  }
+
+  const checkGuesses = (wrongGuesses) => {
+    if (wrongGuesses>3) {
+      setLosses(losses + 1);
+      setTimeout(newGame, 2000);
+    }
+  }
+
+  const newGame = () => { 
+    setSolved([]);
+    setCards(initializeDeck());
+    setWrongGuesses(0);
+    setScore(0);
   }
 
   const preloadImages = () => {
@@ -53,6 +101,7 @@ export default function App() {
     setFlipped([])
     setDisabled(false)
   }
+
   const sameCardClicked = (id) => flipped.includes(id)
 
   const isMatch = (id) => {
@@ -71,9 +120,19 @@ export default function App() {
   }
 
   return (
-    <div className="App">
-      <h1>mnemonic</h1>
-      <h2>can you remember where the cards are?</h2>
+
+    <div className="App"
+      style={{
+        textAlign: "center"
+      }}
+      >
+      <Navbar 
+        wins={wins}
+        losses={losses}
+        score={score}
+        wrongGuesses={wrongGuesses}
+        newGame={newGame}
+      />
       <Board
         dimension={dimension}
         cards={cards}

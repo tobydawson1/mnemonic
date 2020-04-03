@@ -11,9 +11,9 @@ describe('Testing the starter App with enzyme and jest', () => {
     wrapper = mount(<App />);
   });
 
-  test('test the word mnemonic with enzyme', () => {
-    expect(wrapper.find('h1').text()).toContain('mnemonic');
-  });
+//  test('test the word mnemonic with enzyme', () => {
+//    expect(wrapper.find('h1').text()).toContain('mnemonic');
+//  });
     
   test('test mnemonic with the default jest way', () => {
     const { getByText } = render(<App />);
