@@ -12,9 +12,11 @@
 
 <div align="center">
 
-[the idea](#idea) | [play](#play) | [tech](#tech)  | [people](#collaborators) 
+[the idea](#idea) | [play](#play) | [tech](#tech) | [goals](#goals) | [people](#collaborators) 
 
 </div>
+
+<hr>
 
 ## <a name="idea">the idea</a> 
 
@@ -24,7 +26,7 @@
 
 ## <a name="play">play!</a>
 
-Go to [link]()
+[play]()
 
 ## <a name="tech">technologies used</a>
 
@@ -35,6 +37,16 @@ Go to [link]()
 * continuous deployment: **Travis CI, coveralls, Heroku**
 
 * remote team collaboration: **Slack, zoom, miro white board**
+
+##  <a name="goals">goals & challenges</a>
+
+- [x] build a front-end web application for a classic memory game, so we can have fun playing.
+
+- [x] use and understand React design patterns and its testing frameworks Jest and Enzyme.
+
+- [x] deploy the front-end app to Heroku, with continuous deployment as we are building the project.
+
+- [x] use remote collaboration tools to work in an Agile way, to share our daily learnings, and adapt to changes.
 
 ## <a name="collaborators">collaborators</a>
 
