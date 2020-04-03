@@ -1,20 +1,20 @@
-<p align="center">
+<div align="center">
   
 [![Build Status](https://travis-ci.org/tobydawson1/mnemonic.svg?branch=master)](https://travis-ci.org/tobydawson1/mnemonic)
 [![Maintainability](https://api.codeclimate.com/v1/badges/bd0dadbc77b7ede831ea/maintainability)](https://codeclimate.com/github/tobydawson1/mnemonic/maintainability)
 [![Coverage Status](https://coveralls.io/repos/github/tobydawson1/mnemonic/badge.svg?branch=master)](https://coveralls.io/github/tobydawson1/mnemonic?branch=master)
 
-</p>
+</div>
 
 <h1 align="center"> mnemonic </h1>
   
 <h2 align="center"> ...can you remember? </h2>
 
-<p align="center">
+<div align="center">
 
 [the idea](#idea) | [play](#play) | [tech](#tech)  | [collaborators](#collaborators) 
 
-</p>
+</div>
 
 ## <a name="idea">the idea</a> 🃏
 
