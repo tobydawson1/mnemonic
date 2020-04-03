@@ -1,0 +1,16 @@
+.bg-light {
+  /* background: #1db0ff !important; */
+  color: black;
+}
+
+nav.navbar.navbar-default {
+    margin-bottom: 0;
+  }
+  
+  
+  li {
+    margin-left: 10px;
+    font-size: 18px;
+    list-style: none;
+  } 
+  
