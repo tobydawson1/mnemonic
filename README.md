@@ -8,15 +8,15 @@
 
 <h1 align="center"> mnemonic </h1>
   
-<h2 align="center"> ...can you remember? </h2>
+<h2 align="center"> ...can you remember? 🃏</h2>
 
 <div align="center">
 
-[the idea](#idea) | [play](#play) | [tech](#tech)  | [collaborators](#collaborators) 
+[the idea](#idea) | [play](#play) | [tech](#tech)  | [people](#collaborators) 
 
 </div>
 
-## <a name="idea">the idea</a> 🃏
+## <a name="idea">the idea</a> 
 
 ##### [Makers Academy](http://www.makers.tech) - team engineering project
 
