@@ -1,5 +1,5 @@
 function removeWin() {
-    let element = document.getElementById("winhere");
+    let element = document.getElementById("animationhere");
       while (element.firstChild) {
       element.removeChild(element.firstChild);
     }
@@ -9,7 +9,7 @@ function removeWin() {
     let node = document.createElement("H1");
     let winthing = document.createTextNode("you win!!")
     node.appendChild(winthing);  
-    document.getElementById('winhere').appendChild(node);
+    document.getElementById('animationhere').appendChild(node);
     setTimeout(removeWin, 3000);
   };
 

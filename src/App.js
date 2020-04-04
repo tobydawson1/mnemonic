@@ -2,8 +2,9 @@ import React, { useState, useEffect} from 'react'
 import'./styles/App.scss';
 import Board from './components/board/Board'
 import Navbar from './components/Navbar';
-import initializeDeck from './deck'
-import youWin from './win';
+import initializeDeck from './helperFunctions/deck'
+import youWin from './helperFunctions/win';
+import youLost from './helperFunctions/lost';
 
 export default function App() {
   const [cards, setCards]=useState([])
@@ -19,8 +20,6 @@ export default function App() {
   useEffect(() => {
     resizeBoard()
   }, [])
-
- 
 
   useEffect(() => {
     preloadImages()
@@ -80,7 +79,8 @@ export default function App() {
   }
 
   const checkGuesses = (wrongGuesses) => {
-    if (wrongGuesses>3) {
+    if (wrongGuesses>4) {
+      youLost();
       setLosses(losses + 1);
       setTimeout(newGame, 1000);
     }
@@ -129,14 +129,13 @@ export default function App() {
   }
 
   return (
-
     <div className="App">
       <div class="fadebox">
       <h1>mnemonic</h1>
       <h2>can you remember where the cards are?</h2>
       {/* if you want to see the animation uncomment this button */}
       {/* <button onClick={youWin}> simulate a win</button>  */}
-      <div id="winhere"></div>
+      <div id="animationhere"></div>
       <Navbar 
         wins={wins}
         losses={losses}

@@ -16,8 +16,6 @@
   }
 }
 
-#allcards{animation: 1s fadein ease-out;} //this is not working yet
-
 .flip-container{
   perspective: 1000px;
   display: inline-block;
@@ -36,7 +34,6 @@
   position: absolute;
   left: 0;
   top: 0;
-
 }
 
 .back {
@@ -58,7 +55,7 @@
 }
 
 //win text
-#winhere{
+#animationhere{
   h1 {font-family: "Schoolbell", sans-serif;
     animation: colors 0.5s infinite alternate;
     color: #99236F;
