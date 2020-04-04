@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&family=Schoolbell&display=swap');
 * {margin:0; padding:0}
 .App {
   font-family: "Comic Neue", sans-serif;
@@ -52,6 +52,30 @@
       transform: translateY(0);
       opacity: 100%
   }
+}
+
+//win text
+#winhere{
+  h1 {font-family: "Schoolbell", sans-serif;
+    animation: colors 0.5s infinite alternate;
+    color: #99236F;
+    text-shadow: 1px 1px 7px #937385;
+    z-index:1;
+    position:absolute;
+    left:0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto;
+    transform: translateX(200%);
+    transform: translateY(110%);
+    }
+}
+@keyframes colors {
+  from {font-size: 3em;}
+  to {font-size: 4em;
+      letter-spacing: 1px;
+      color: #F46464;
+      }
 }
 
 //for gamebar

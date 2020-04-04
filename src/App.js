@@ -3,6 +3,7 @@ import'./styles/App.scss';
 import Board from './components/board/Board'
 import Navbar from './components/Navbar';
 import initializeDeck from './deck'
+import youWin from './win';
 
 export default function App() {
   const [cards, setCards]=useState([])
@@ -73,8 +74,9 @@ export default function App() {
 
   const checkScore = (score) => {
     if (score>4) {
+      youWin();
       setWins(wins + 1);
-      setTimeout(newGame, 1000);
+      setTimeout(newGame, 4000);
     }
   }
 
@@ -132,7 +134,9 @@ export default function App() {
     <div className="App">
       <h1>mnemonic</h1>
       <h2>can you remember where the cards are?</h2>
-
+      {/* we remove the simulate button when ready */}
+      <button onClick={youWin}> simulate a win</button> 
+      <div id="winhere"></div>
       <Navbar 
         wins={wins}
         losses={losses}
