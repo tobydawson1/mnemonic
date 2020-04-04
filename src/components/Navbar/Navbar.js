@@ -5,7 +5,7 @@ const Navbar = props => (
   <nav className="navbar">
     <div>
     <button className="restart" onClick={() => props.newGame()}>
-            new game!</button>
+            new game</button>
       <ul className="navbar-nav">
         <li className="nav-item">
           <div className="wins">wins: <span>{props.wins}</span> </div>

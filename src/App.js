@@ -18,7 +18,6 @@ export default function App() {
 
   useEffect(() => {
     resizeBoard()
-    // setCards(initializeDeck())
   }, [])
 
  
@@ -135,7 +134,7 @@ export default function App() {
       <div class="fadebox">
       <h1>mnemonic</h1>
       <h2>can you remember where the cards are?</h2>
-      {/* we remove the simulate button when ready */}
+      {/* if you want to see the animation uncomment this button */}
       {/* <button onClick={youWin}> simulate a win</button>  */}
       <div id="winhere"></div>
       <Navbar 
