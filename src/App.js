@@ -132,10 +132,11 @@ export default function App() {
   return (
 
     <div className="App">
+      <div class="fadebox">
       <h1>mnemonic</h1>
       <h2>can you remember where the cards are?</h2>
       {/* we remove the simulate button when ready */}
-      <button onClick={youWin}> simulate a win</button> 
+      {/* <button onClick={youWin}> simulate a win</button>  */}
       <div id="winhere"></div>
       <Navbar 
         wins={wins}
@@ -143,7 +144,7 @@ export default function App() {
         score={score}
         wrongGuesses={wrongGuesses}
         newGame={newGame}
-      />
+      /></div>
       <Board
         dimension={dimension}
         cards={cards}
