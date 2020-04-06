@@ -114,11 +114,12 @@ button {padding: 0.4em; padding-top:0.6em; font-family: "chilanka", sans-serif;
 
   @media screen and (max-width: 768px){
   body {font-size: 0.7em; }
-  .board {
+  .board {margin-top:0.6em;
     width: 100vw;
     transform: translateX(0);}
   .fadebox {padding: 0; margin: 0 1em}
-  .App { h1{font-size: 3em}}
+  .App { h1{font-size: 3em}
+  h2{padding-bottom: 0.3em}}
   button {padding: 0.3em; padding-top:0.5em; font-size:1.2em;}
   li {padding: 0 0.6em;display: inline-block}
   nav {margin-bottom: .2em;
