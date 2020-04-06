@@ -4,6 +4,7 @@ import { render } from '@testing-library/react';
 import App from './App';
 import Card from './components/card/Card';
 import Navbar from './components/Navbar';
+import Board from './components/board/Board';
 
 describe('Testing the starter App with enzyme and jest', () => {
   
@@ -32,4 +33,3 @@ describe('Testing the starter App with enzyme and jest', () => {
     expect(card).toBe;
   });
 });
-
