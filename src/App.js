@@ -71,7 +71,7 @@ export default function App() {
   }
 
   const checkScore = (score) => {
-    if (score>4) {
+    if (score>6) {
       youWin();
       setWins(wins + 1);
       setTimeout(newGame, 4000);
@@ -79,7 +79,7 @@ export default function App() {
   }
 
   const checkGuesses = (wrongGuesses) => {
-    if (wrongGuesses>4) {
+    if (wrongGuesses>6) {
       youLost();
       setLosses(losses + 1);
       setTimeout(newGame, 1000);
@@ -96,12 +96,12 @@ export default function App() {
   }
 
   const showCards = () => {
-    setFlipped([0, 1, 2, 3, 4, 5, 6, 7, 8, 9,])
+    setFlipped([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13])
   }
 
   const preloadImages = () => {
     cards.map(card => {
-      const src = `/img/${card.type}.svg`
+      const src = `/img/${card.type}.jpg`
       new Image().src = src
     })
   }

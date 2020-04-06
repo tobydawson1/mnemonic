@@ -12,9 +12,9 @@ const Navbar = props => (
         </li> <li className="nav-item">
           <div className="losses">losses: <span>{props.losses}</span> </div>
         </li> <li className="nav-item">
-          <div className="score">current score: <span>{props.score}/5</span></div>
+          <div className="score">current score: <span>{props.score}/7</span></div>
         </li>  <li className="nav-item">
-          <div className="wrongGuesses">incorrect guesses: <span>{props.wrongGuesses}/5</span></div>
+          <div className="wrongGuesses">incorrect guesses: <span>{props.wrongGuesses}/7</span></div>
         </li>
       </ul>
     </div>

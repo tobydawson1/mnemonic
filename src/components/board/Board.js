@@ -14,8 +14,8 @@ return (
           key ={card.id}
           id = {card.id}
           type = {card.type}
-          width = {dimension / 4.5 }
-          height = {dimension / 4.5}
+          width = {dimension / 6 }
+          height = {dimension / 4}
           flipped = {flipped.includes(card.id)}
           solved = {solved.includes(card.id)}
           handleClick = {handleClick}
