@@ -22,7 +22,7 @@
 
 ##### [Makers Academy](http://www.makers.tech) - team engineering project
 
-<img src="./public/card_set/back.svg" width="100"/>
+<img src="./public/card_set/back.jpg" width="100"/>
 
 ## <a name="play">play!</a>
 
