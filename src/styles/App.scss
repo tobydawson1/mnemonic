@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&family=Schoolbell&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Schoolbell&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Chilanka&display=swap');
-// @import url("https://fonts.googleapis.com/css?family=Do+Hyeon&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Do+Hyeon&display=swap");
 * {margin:0; padding:0}
 body {
   overscroll-behavior: none;
@@ -13,10 +13,11 @@ body {
   width: 100vw;
   padding-top: 2em;
   img { cursor: pointer; }
-  h2{font-family: "chilanka", sans-serif;color:rgb(86, 33, 119); font-weight: 400; letter-spacing: 1px;padding-bottom: 1em;text-shadow: 1px 1px 5px rgb(119, 101, 130);  }
-  h1 {text-shadow: 1px 1px 5px rgb(119, 101, 130); 
-    font-size: 4em; color: rgb(67, 245, 171);
-    font-family: "chilanka", sans-serif;
+  h2{font-family: "chilanka", sans-serif; color: rgb(67, 245, 171); font-weight: 400; letter-spacing: 1px;padding-bottom: 1em;text-shadow: 1px 1px 5px rgb(119, 101, 130);  }
+  h1 {text-shadow: 1px 1px 5px rgb(67, 245, 171); 
+    font-size: 4em;
+    font-family:"Do Hyeon", "chilanka", sans-serif;
+    letter-spacing: 5px; color:rgb(98, 24, 143);
   }
 }
 .board {  height: 80vh;
@@ -81,8 +82,8 @@ body {
     }
 }
 @keyframes colors {
-  from {font-size: 4em;}
-  to {font-size: 5em;
+  from {font-size: 5em;}
+  to {font-size: 7em;
       letter-spacing: 1px;
       color: #F46464;
       }
@@ -102,12 +103,12 @@ nav {
 }
 li {font-family: "chilanka", sans-serif;font-weight: 400;list-style: none; display: inline-flex; padding: 1em; 
   margin-top: 1em; border-radius: 10px;font-size: 1.4em;
-  color:rgb(98, 43, 131);font-weight: 700; letter-spacing: 1px;
+  color:rgb(98, 24, 143);font-weight: 700; letter-spacing: 1px;
 text-shadow: 1px 1px 5px grey; span{color:rgb(67, 245, 171)}}
 
 button {padding: 0.4em; padding-top:0.6em; font-family: "chilanka", sans-serif;
   font-size:1.4em; cursor: pointer; letter-spacing: 2px;
-  background-color: rgb(143, 56, 198);   color:rgb(67, 245, 171);
+  background-color: rgb(119, 29, 175);   color:rgb(67, 245, 171);
   border-radius: 10px; border: none; box-shadow: 1px 1px 5px rgb(82, 40, 91)}
 
   @media screen and (max-width: 768px){
