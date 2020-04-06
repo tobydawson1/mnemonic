@@ -4,7 +4,7 @@ import { render } from '@testing-library/react';
 import App from '../../App';
 import Navbar from './Navbar';
 
-describe('Testing the starter App with enzyme and jest', () => {
+describe('Testing the Navbar with enzyme', () => {
   
   let wrapper;
   beforeEach(() => {
@@ -15,18 +15,11 @@ describe('Testing the starter App with enzyme and jest', () => {
     expect(wrapper.find('button').text()).toContain('new game');
   });
 
+  test('tests wins Div to find the wins: text inside', () => {
+    expect(wrapper.find('div.wins').text()).toContain('wins:');
+  });
+
   test('tests the amount of values inside the wins', () => {
   expect(wrapper.find('.wins').children()).toHaveLength(3);
   });
-  
 });
-
-// describe ('Testing for classes using enzyme', ()=> {
-
-
-//   test('tests text with wins:', () => {
-//     const wrap = shallow (<Navbar />);
-//     console.log (wrap.is('.wins'))
-//     expect(wrap.is('wins')).toContain('wins');
-//   });
-// })
