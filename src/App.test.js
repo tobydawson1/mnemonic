@@ -3,6 +3,7 @@ import { shallow, mount } from 'enzyme';
 import { render } from '@testing-library/react';
 import App from './App';
 import Card from './components/card/Card';
+import Navbar from './components/Navbar';
 
 describe('Testing the starter App with enzyme and jest', () => {
   
