@@ -22,4 +22,14 @@ describe('Testing the Navbar with enzyme', () => {
   test('tests the amount of values inside the wins', () => {
   expect(wrapper.find('.wins').children()).toHaveLength(3);
   });
+
+  test('tests wins Div to find the losses: text inside', () => {
+    expect(wrapper.find('div.losses').text()).toContain('losses:');
+  });
+
+  test('tests the amount of values inside the wins', () => {
+  expect(wrapper.find('.losses').children()).toHaveLength(3);
+  });
+
+
 });
