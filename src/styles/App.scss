@@ -70,7 +70,8 @@ body {
   h1 {font-family: "Schoolbell", sans-serif;
     animation: colors 0.5s infinite alternate;
     color: #99236F;
-    text-shadow: 1px 1px 7px #937385;
+    -webkit-text-stroke: 1px white; 
+    text-shadow: 1px 1px 20px black;
     z-index:1;
     position:absolute;
     left:0;
@@ -82,8 +83,8 @@ body {
     }
 }
 @keyframes colors {
-  from {font-size: 5em;}
-  to {font-size: 7em;
+  from {font-size: 7em;}
+  to {font-size: 9em;
       letter-spacing: 1px;
       color: #F46464;
       }
