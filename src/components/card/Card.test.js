@@ -21,4 +21,11 @@ describe('Testing the Card', () => {
         expect(wrapper.find('.flipped').exists()).toEqual(false);
     });
 
+    it('card is not solved', () => {
+        expect(wrapper.find('.solved').exists()).toEqual(false);
+    });
+
+    it('card is disabled', () => {
+        expect(wrapper.find('.disabled').exists()).toEqual(false);
+    });
 });   

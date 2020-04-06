@@ -1,7 +1,7 @@
 import React, { useState, useEffect} from 'react'
 import'./styles/App.scss';
 import Board from './components/board/Board'
-import Navbar from './components/Navbar';
+import Gamebar from './components/Gamebar';
 import initializeDeck from './helperFunctions/deck'
 import youWin from './helperFunctions/win';
 import youLost from './helperFunctions/lost';
@@ -136,7 +136,7 @@ export default function App() {
       {/* if you want to see the animation uncomment this button */}
       {/* <button onClick={youWin}> simulate a win</button>  */}
       <div id="animationhere"></div>
-      <Navbar 
+      <Gamebar 
         wins={wins}
         losses={losses}
         score={score}

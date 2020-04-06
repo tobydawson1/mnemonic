@@ -1,12 +1,12 @@
 import React from "react";
 
 
-const Navbar = props => (
-  <nav className="navbar">
+const Gamebar = props => (
+  <nav className="Gamebar">
     <div>
     <button className="restart" onClick={() => props.newGame()}>
             new game</button>
-      <ul className="navbar-nav">
+      <ul className="gamebar-nav">
         <li className="nav-item">
           <div className="wins">wins: <span>{props.wins}</span> </div>
         </li> <li className="nav-item">
@@ -23,4 +23,4 @@ const Navbar = props => (
 
 
 
-export default Navbar;
+export default Gamebar;
