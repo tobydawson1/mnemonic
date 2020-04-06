@@ -70,8 +70,8 @@ export default function App() {
     callback(newGuesses);
   }
 
-  const checkScore = (score) => {
-    if (score>6) {
+  const checkScore = (score , seconds) => {
+    if (score>6 || seconds) {
       youWin();
       setWins(wins + 1);
       setTimeout(newGame, 4000);
@@ -93,6 +93,7 @@ export default function App() {
     setTimeout(resetCards, 2000)
     setWrongGuesses(0);
     setScore(0);
+    stopwatch(30);
   }
 
   const showCards = () => {
@@ -127,15 +128,47 @@ export default function App() {
       ),
     )
   }
+    // Timer method
+    let countdown;
+  const timerDisplay = document.querySelector('.display__time-left')
+  function stopwatch(seconds) {
+
+   clearInterval(countdown);
+
+    const now =  Date.now();
+    const then = now + seconds * 1000;
+    DisplayTimeleft(seconds);
+  
+    countdown = setInterval(() => {
+      const secondsLeft = Math.round((then - Date.now()) / 1000);
+      // checks if we should stop it 
+      if(secondsLeft < 0){
+        clearInterval(countdown);
+        return;
+      }
+      //display it 
+      DisplayTimeleft(secondsLeft);
+    }, 1000);
+  }
+  
+  function DisplayTimeleft(seconds) {
+    const minutes = Math.floor(seconds / 60)
+    const remainderSeconds = seconds % 60;
+    const display = `${minutes}:${remainderSeconds < 10 ? '0' : '' }${remainderSeconds}`;
+    document.title = display;
+    timerDisplay.textContent = display;
+  }
 
   return (
     <div className="App">
       <div class="fadebox">
       <h1>mnemonic</h1>
       <h2>can you remember where the cards are?</h2>
+      <h3 class="display__time-left">Time secondsLeft</h3>
       {/* if you want to see the animation uncomment this button */}
       {/* <button onClick={youWin}> simulate a win</button>  */}
       <div id="animationhere"></div>
+      
       <Navbar 
         wins={wins}
         losses={losses}
@@ -143,6 +176,7 @@ export default function App() {
         wrongGuesses={wrongGuesses}
         newGame={newGame}
       /></div>
+      
       <Board
         dimension={dimension}
         cards={cards}
