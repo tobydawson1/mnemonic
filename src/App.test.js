@@ -14,6 +14,10 @@ describe('Testing the starter App with enzyme and jest', () => {
   test('test the word mnemonic with enzyme', () => {
     expect(wrapper.find('h1').text()).toContain('mnemonic');
   });
+
+  test('Test for the h3 tag  enzyme', () => {
+    expect(wrapper.find('h2').text()).toContain('can you remember where the cards are?');
+  });
     
   test('test mnemonic with the default jest way', () => {
     const { getByText } = render(<App />);
