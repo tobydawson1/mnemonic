@@ -21,7 +21,8 @@
   },
   "jest": {
     "coveragePathIgnorePatterns": [
-      "src/index.js"
+      "src/index.js",
+      "src/helperFunctions/"
     ]
   },
   "eslintConfig": {

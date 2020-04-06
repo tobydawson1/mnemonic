@@ -2,7 +2,9 @@ import React, { useState, useEffect} from 'react'
 import'./styles/App.scss';
 import Board from './components/board/Board'
 import Navbar from './components/Navbar';
-import initializeDeck from './deck'
+import initializeDeck from './helperFunctions/deck'
+import youWin from './helperFunctions/win';
+import youLost from './helperFunctions/lost';
 
 export default function App() {
   const [cards, setCards]=useState([])
@@ -17,10 +19,7 @@ export default function App() {
 
   useEffect(() => {
     resizeBoard()
-    // setCards(initializeDeck())
   }, [])
-
- 
 
   useEffect(() => {
     preloadImages()
@@ -72,14 +71,16 @@ export default function App() {
   }
 
   const checkScore = (score) => {
-    if (score>4) {
+    if (score>6) {
+      youWin();
       setWins(wins + 1);
-      setTimeout(newGame, 1000);
+      setTimeout(newGame, 4000);
     }
   }
 
   const checkGuesses = (wrongGuesses) => {
-    if (wrongGuesses>3) {
+    if (wrongGuesses>6) {
+      youLost();
       setLosses(losses + 1);
       setTimeout(newGame, 1000);
     }
@@ -95,12 +96,12 @@ export default function App() {
   }
 
   const showCards = () => {
-    setFlipped([0, 1, 2, 3, 4, 5, 6, 7, 8, 9,])
+    setFlipped([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13])
   }
 
   const preloadImages = () => {
     cards.map(card => {
-      const src = `/img/${card.type}.svg`
+      const src = `/img/${card.type}.jpg`
       new Image().src = src
     })
   }
@@ -128,18 +129,20 @@ export default function App() {
   }
 
   return (
-
     <div className="App">
+      <div class="fadebox">
       <h1>mnemonic</h1>
       <h2>can you remember where the cards are?</h2>
-
+      {/* if you want to see the animation uncomment this button */}
+      {/* <button onClick={youWin}> simulate a win</button>  */}
+      <div id="animationhere"></div>
       <Navbar 
         wins={wins}
         losses={losses}
         score={score}
         wrongGuesses={wrongGuesses}
         newGame={newGame}
-      />
+      /></div>
       <Board
         dimension={dimension}
         cards={cards}
