@@ -39,5 +39,12 @@ describe('Testing the Navbar with enzyme', () => {
   expect(wrapper.find('.score').children()).toHaveLength(2);
   });
 
+  test('tests wins Div to find the losses: text inside', () => {
+    expect(wrapper.find('div.wrongGuesses').text()).toContain('incorrect guesses: /7');
+  });
+
+  test('tests the amount of values inside the wins', () => {
+  expect(wrapper.find('.score').children()).toHaveLength(2);
+  });
 
 });
