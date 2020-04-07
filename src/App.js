@@ -82,7 +82,7 @@ export default function App() {
     if (wrongGuesses>6) {
       youLost();
       setLosses(losses + 1);
-      setTimeout(newGame, 1000);
+      setTimeout(newGame, 3000);
     }
   }
 
