@@ -23,15 +23,9 @@ describe('Testing the starter App with enzyme and jest', () => {
     expect(wrapper.find('div.animationhere').children()).toHaveLength(0);
   });
     
-  test('test mnemonic with the default jest way', () => {
+  test('Jest to find the all the text appearing on the page', () => {
     const { getByText } = render(<App />);
-    const linkElement = getByText(/mnemonic/i);
-    expect(linkElement).toBeInTheDocument();
-  }); 
-
-  test('test h2 tag using jest way', () => {
-    const { getByText } = render(<App />);
-    const linkElement = getByText(/can you remember where the cards are?/i);
+    const linkElement = getByText(/mnemonic/i ,/can you remember where the cards are?/i);
     expect(linkElement).toBeInTheDocument();
   }); 
 
