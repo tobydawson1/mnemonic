@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import initializeDeck from './helperFunctions/deck'
 import youWin from './helperFunctions/win';
 import youLost from './helperFunctions/lost';
+import timeUp from './helperFunctions/timeUp';
 
 export default function App() {
   const [cards, setCards]=useState([])
@@ -16,6 +17,8 @@ export default function App() {
   const [wins, setWins] = useState(0);
   const [wrongGuesses, setWrongGuesses] = useState(0);
   const [losses, setLosses] = useState(0);
+  const [seconds, setSeconds] = useState(30);
+  const [isActive, setIsActive] = useState(false);
 
   useEffect(() => {
     resizeBoard()
@@ -75,24 +78,32 @@ export default function App() {
       youWin();
       setWins(wins + 1);
       setTimeout(newGame, 4000);
+      timerReset()
     }
   }
 
   const checkGuesses = (wrongGuesses) => {
     if (wrongGuesses>6) {
       youLost();
-      setLosses(losses + 1);
-      setTimeout(newGame, 1000);
+      loseThisGame() 
     }
   }
 
-  const newGame = () => { 
+  function loseThisGame() {
+    setLosses(losses + 1);
+    setTimeout(newGame, 3000);
+    timerReset()
+  }
+
+  const newGame = () => {
+    setSeconds(30); 
     setSolved([]);
     setCards(initializeDeck());
     showCards()
     setTimeout(resetCards, 3000)
     setWrongGuesses(0);
     setScore(0);
+    setIsActive(true);
   }
 
   const showCards = () => {
@@ -127,15 +138,42 @@ export default function App() {
       ),
     )
   }
+  //timer stuff
+  const Timer = () => {
+    useEffect(() => {
+      let interval = null;
+      if (isActive && seconds == 0){
+        timerReset();
+        timeUp();
+        loseThisGame();
+        clearInterval(interval);
+      } else if (isActive) {
+        interval = setInterval(() => {
+          setSeconds(seconds => seconds - 1);
+        }, 1000);}
+      else if (!isActive && seconds !== 0) {
+        clearInterval(interval);
+      }
+      return () => clearInterval(interval);
+    }, [isActive, seconds]);
+  
+    return (
+        <div className="timer"><h2>00:{seconds}</h2></div>
+    );
+  };
+  function timerReset() {
+    setSeconds(30);
+    setIsActive(false);
+  }
+///end of timer
 
   return (
     <div className="App">
       <div class="fadebox">
       <h1>mnemonic</h1>
       <h2>can you remember where the cards are?</h2>
-      {/* if you want to see the animation uncomment this button */}
-      {/* <button onClick={youWin}> simulate a win</button>  */}
       <div id="animationhere"></div>
+      <Timer/>
       <Navbar 
         wins={wins}
         losses={losses}
