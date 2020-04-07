@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 
 function About (){
   return (
-    <div> 
+    <div className="App"> 
     <h3> About</h3>
     <p> This is the Memory card app made by :</p>
     <ul>

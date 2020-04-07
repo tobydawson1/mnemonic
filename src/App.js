@@ -152,6 +152,7 @@ export default function App() {
                 newGame={newGame}
               />
             </div>
+            
             <Board
               dimension={dimension}
               cards={cards}
