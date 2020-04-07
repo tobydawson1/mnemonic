@@ -41,21 +41,3 @@ describe('Testing the starter App with enzyme and jest', () => {
     expect(card).toBe
   });
 });
-
-describe('Testing the Card', () => {
-  let wrapper;
-  beforeEach(() => {
-    wrapper = mount(<App />);
-  });
-  it('card is not flipped', () => {
-      expect(wrapper.find('.flipped').exists()).toEqual(false);
-  });
-
-  it('card is not solved', () => {
-      expect(wrapper.find('.solved').exists()).toEqual(false);
-  });
-
-  it('card is disabled', () => {
-      expect(wrapper.find('.disabled').exists()).toEqual(false);
-  });
-});
