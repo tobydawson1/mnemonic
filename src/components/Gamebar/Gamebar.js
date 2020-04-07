@@ -1,5 +1,4 @@
 import React from "react";
-import {Link} from 'react-router-dom';
 
 const Gamebar = props => (
   <nav className="Gamebar">
@@ -16,7 +15,6 @@ const Gamebar = props => (
         </li>  <li className="nav-item">
           <div className="wrongGuesses">incorrect guesses: <span>{props.wrongGuesses}/7</span></div>
         </li><br/>
-        <Link className="about" to='/about'>About our team</Link>
       </ul>
     </div>
   </nav>

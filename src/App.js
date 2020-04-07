@@ -7,7 +7,7 @@ import youWin from './helperFunctions/win';
 import youLost from './helperFunctions/lost';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import About from './components/pages/About';
-
+import {Link} from 'react-router-dom';
 
 export default function App() {
   const [cards, setCards] = useState([])
@@ -137,13 +137,11 @@ export default function App() {
         <React.Fragment>
           <div className="App">
             <div class="fadebox">
-
               <h1>mnemonic</h1>
               <h2>can you remember where the cards are?</h2>
-              {/* if you want to see the animation uncomment this button */}
-              {/* <button onClick={youWin}> simulate a win</button>  */}
+              <Link className="about" to='/about'>about</Link>
               <div id="animationhere"></div>
-
+              
               <Gamebar
                 wins={wins}
                 losses={losses}
