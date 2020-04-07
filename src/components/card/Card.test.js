@@ -10,14 +10,22 @@ describe('Testing the Card', () => {
           
             width={200}
             height={200}
-            back={'card_set/back.svg'}
-            front={'card_set/yellow.svg'}
+            type={'card_set/back.svg'}
             flipped={false}
+            solved={false}
+            disabled={false}
             handleClick={() => handleClick(1)}
         />)
     });
     it('card is not flipped', () => {
-        // console.log(wrapper.debug());
         expect(wrapper.find('.flipped').exists()).toEqual(false);
     });
-});   
+
+    it('card is not solved', () => {
+        expect(wrapper.find('.solved').exists()).toEqual(false);
+    });
+
+    it('card is disabled', () => {
+        expect(wrapper.find('.disabled').exists()).toEqual(false);
+    });
+});  
