@@ -31,15 +31,13 @@ A single-page web app game, based on the classic memory / matching cards game. <
 * continuous deployment: **Travis CI, coveralls, Heroku**
 
 * remote team collaboration: **Slack, zoom, miro white board**
-
-##### current status:
-<div align="center">
   
+##### current status:
+
+[![Heroku App Status](http://heroku-shields.herokuapp.com/mnemonic-game)](http://mnemonic-game.herokuapp.com/)
 [![Build Status](https://travis-ci.org/tobydawson1/mnemonic.svg?branch=master)](https://travis-ci.org/tobydawson1/mnemonic)
 [![Maintainability](https://api.codeclimate.com/v1/badges/bd0dadbc77b7ede831ea/maintainability)](https://codeclimate.com/github/tobydawson1/mnemonic/maintainability)
 [![Coverage Status](https://coveralls.io/repos/github/tobydawson1/mnemonic/badge.svg?branch=master)](https://coveralls.io/github/tobydawson1/mnemonic?branch=master)
-
-</div>
 
 ##  <a name="goals">goals & challenges</a>
 
