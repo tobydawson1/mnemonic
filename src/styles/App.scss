@@ -9,7 +9,8 @@ body {
 .App {
   text-align: center;
   background-color: #17658f;
-  height: 100vh;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1200 800'%3E%3Cg %3E%3Cpolygon fill='%231a8091' points='1800 160 0 560 0 450 1800 50'/%3E%3Cpolygon fill='%231d9b93' points='1800 360 0 660 0 550 1800 150'/%3E%3Cpolygon fill='%2320b794' points='1800 360 0 760 0 650 1800 250'/%3E%3Cpolygon fill='%2323d296' points='1800 460 0 860 0 750 1800 350'/%3E%3Cpolygon fill='%2326ed98' points='1800 800 0 800 0 850 1800 450'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: cover;
   width: 100vw;
   height: 100%;
   padding-top: 2em;
@@ -21,11 +22,9 @@ body {
     letter-spacing: 5px; color:rgb(98, 24, 143);
   }
 }
-.board {  height: 80vh;
-  background-color: #17658f;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg %3E%3Cpolygon fill='%231a8091' points='1600 160 0 460 0 350 1600 50'/%3E%3Cpolygon fill='%231d9b93' points='1600 260 0 560 0 450 1600 150'/%3E%3Cpolygon fill='%2320b794' points='1600 360 0 660 0 550 1600 250'/%3E%3Cpolygon fill='%2323d296' points='1600 460 0 760 0 650 1600 350'/%3E%3Cpolygon fill='%2326ed98' points='1600 800 0 800 0 750 1600 450'/%3E%3C/g%3E%3C/svg%3E");
-  background-size: cover;
-  height: 100vh;
+.board {  height: 100vh;
+  width: 80vw;
+  transform: translateX(10%);
 }
 
 .flip-container{
@@ -72,7 +71,8 @@ body {
   h1 {font-family: "Schoolbell", sans-serif;
     animation: colors 0.5s infinite alternate;
     color: #99236F;
-    text-shadow: 1px 1px 7px #937385;
+    -webkit-text-stroke: 1px white; 
+    text-shadow: 1px 1px 20px black;
     z-index:1;
     position:absolute;
     left:0;
@@ -84,8 +84,8 @@ body {
     }
 }
 @keyframes colors {
-  from {font-size: 5em;}
-  to {font-size: 7em;
+  from {font-size: 7em;}
+  to {font-size: 9em;
       letter-spacing: 1px;
       color: #F46464;
       }
@@ -115,9 +115,17 @@ button {padding: 0.4em; padding-top:0.6em; font-family: "chilanka", sans-serif;
 
   @media screen and (max-width: 768px){
   body {font-size: 0.7em; }
-  .fadebox {padding: 0;}
-  button {font-size: 1.8em}
-  li {padding: 0 1em;display: inline-block}
+  .board {margin-top:0.6em;
+    width: 100vw;
+    transform: translateX(0);}
+  .fadebox {padding: 0; margin: 0 1em}
+  .App { h1{font-size: 3em}
+  h2{padding-bottom: 0.3em}}
+  button {padding: 0.3em; padding-top:0.5em; font-size:1.2em;}
+  li {padding: 0 0.6em;display: inline-block}
   nav {margin-bottom: .2em;
-  .nav-item {padding-bottom: 0;}}
+  .nav-item {padding-bottom: 0;}
+  .flip-container{
+    margin: 0.7em;
+  }}
 }

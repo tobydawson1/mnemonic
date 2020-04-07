@@ -90,7 +90,7 @@ export default function App() {
     setSolved([]);
     setCards(initializeDeck());
     showCards()
-    setTimeout(resetCards, 2000)
+    setTimeout(resetCards, 3000)
     setWrongGuesses(0);
     setScore(0);
   }
