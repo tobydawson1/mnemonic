@@ -18,13 +18,7 @@ A single-page web app game, based on the classic memory / matching cards game. <
 
 <img src="./public/card_set/back.jpg" width="100"/>
 
-<<<<<<< HEAD
 ## <a name="play">game on!</a> 🃏 [play here](http://mnemonic-game.herokuapp.com/) 🃏
-=======
-## <a name="play">game on!</a> 🃏
-
-[play here](http://mnemonic-game.herokuapp.com/)
->>>>>>> f8bd5bac59489485607bacafaf5b722b35aad55e
 
 ## <a name="features">features</a>
 
