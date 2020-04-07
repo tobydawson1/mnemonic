@@ -38,6 +38,6 @@ describe('Testing the starter App with enzyme and jest', () => {
   it('app should contain a card', () => {
     const wrapper = shallow(<App />);
     const card = wrapper.find(Card); 
-    expect(card).toBe;
+    expect(card).toBe
   });
 });

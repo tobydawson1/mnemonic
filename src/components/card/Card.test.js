@@ -28,4 +28,4 @@ describe('Testing the Card', () => {
     it('card is disabled', () => {
         expect(wrapper.find('.disabled').exists()).toEqual(false);
     });
-});   
+});  

@@ -45,5 +45,4 @@ describe('Testing the Gamebar with enzyme', () => {
   test('tests the amount of values inside the wins', () => {
   expect(wrapper.find('.wrongGuesses').children()).toHaveLength(2);
   });
-
 });
