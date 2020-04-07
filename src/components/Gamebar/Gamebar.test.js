@@ -7,7 +7,7 @@ describe('Testing the Gamebar with enzyme', () => {
   
   let wrapper;
   beforeEach(() => {
-    wrapper = mount(<Gamebar />);
+    wrapper = shallow(<Gamebar />);
   });
 
   test('tests to find a button with text with new game', () => {
