@@ -137,7 +137,7 @@ export default function App() {
 
   return (
     <div className="App">
-      <div class="fadebox">
+      <div className="fadebox">
       <h1>mnemonic</h1>
       <h2>can you remember where the cards are?</h2>
       {/* if you want to see the animation uncomment this button */}
