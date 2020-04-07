@@ -4,7 +4,7 @@
 
 <div align="center">
 
-[the idea](#idea) | [play](#play) | [tech](#tech) | [goals](#goals) | [installation](#installation) | [testing](#testing) | [people](#collaborators) 
+[the idea](#idea) | [play](#play) | [features](#features) | [tech](#tech) | [goals](#goals) | [installation](#installation) | [testing](#testing) | [people](#collaborators) 
 
 </div>
 
@@ -22,6 +22,17 @@ A single-page web app game, based on the classic memory / matching cards game. <
 
 [play on the live link here]()
 
+## <a name="features">features</a>
+
+- [x] Every game round will deal 14 cards. 
+- [x] You have 2 seconds to memorize the pairs, then the cards are flipped facing down. 
+- [x] You can click on the cards to turn them up, but you can only flip two cards at a time, unless they match. 
+- [x] If the cards match, they will remain facing up.
+- [x] You have 7 attempts to match all the cards. 
+- [x] If you don't, you lose this round, and the game will reset, by shuffling the cards and giving you another shot.
+- [x] The round is won when you match all 14 cards.
+- [x] As you progress through the rounds, the revealing time shortens: after 4 wins you will only get 1 second of reveal, and after 8 wins you get none!
+
 ## <a name="tech">technologies used</a>
 
 * built with: **JavaScript & React.js**
@@ -33,13 +44,11 @@ A single-page web app game, based on the classic memory / matching cards game. <
 * remote team collaboration: **Slack, zoom, miro white board**
 
 ##### current status:
-<div align="center">
-  
+
+[![Heroku App Status](http://heroku-shields.herokuapp.com/mnemonic-game)](http://mnemonic-game.herokuapp.com/)
 [![Build Status](https://travis-ci.org/tobydawson1/mnemonic.svg?branch=master)](https://travis-ci.org/tobydawson1/mnemonic)
 [![Maintainability](https://api.codeclimate.com/v1/badges/bd0dadbc77b7ede831ea/maintainability)](https://codeclimate.com/github/tobydawson1/mnemonic/maintainability)
 [![Coverage Status](https://coveralls.io/repos/github/tobydawson1/mnemonic/badge.svg?branch=master)](https://coveralls.io/github/tobydawson1/mnemonic?branch=master)
-
-</div>
 
 ##  <a name="goals">goals & challenges</a>
 
