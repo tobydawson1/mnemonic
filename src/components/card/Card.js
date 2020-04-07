@@ -1,6 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+// This is imported into the Board and sets up each of the cards
+//to have theyre own container div which allows for the css flip to happen
+// this is done also by using the Handle click
+// This is also where the cards are set with a front card all matched with the back of the card
 export default function Card({ 
   handleClick,
   id,
@@ -18,7 +22,7 @@ export default function Card({
     height,
   }}
   onClick = {()=> disabled ? null : handleClick(id)}
-  >
+  > 
     <div className='flipper'>
       <img alt=""
       style={{

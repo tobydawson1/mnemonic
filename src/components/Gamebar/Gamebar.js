@@ -1,6 +1,6 @@
 import React from "react";
 
-
+// Each of these props wins,losses,score,wrongGuesses,are all updated in the App.Jsin methods
 const Gamebar = props => (
   <nav className="Gamebar">
     <div>
