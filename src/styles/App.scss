@@ -21,6 +21,14 @@ body {
     font-family:"Do Hyeon", "chilanka", sans-serif;
     letter-spacing: 5px; color:rgb(98, 24, 143);
   }
+  h3{
+    font-family:"Do Hyeon", "chilanka", sans-serif;
+    font-size: 3em;
+    color: rgb(67, 245, 171);
+  }
+  p{
+    font-family: "chilanka", sans-serif; color: rgb(67, 245, 171); font-weight: 400; font-size:2em;
+  }
 }
 .board {  height: 100vh;
   width: 80vw;
@@ -138,6 +146,5 @@ button {padding: 0.4em; padding-top:0.6em; font-family: "chilanka", sans-serif;
   .flip-container{
     margin: 0.7em;
   }}
-  .about{
-  }
+  
 }
