@@ -22,7 +22,9 @@ body {
     letter-spacing: 5px; color:rgb(98, 24, 143);
   }
 }
-.board {  height: 100vh;
+.board {  
+  padding-bottom: 10em;
+  height: 100%;
   width: 80vw;
   transform: translateX(10%);
 }
