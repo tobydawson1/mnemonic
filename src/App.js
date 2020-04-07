@@ -6,6 +6,7 @@ import initializeDeck from './helperFunctions/deck'
 import youWin from './helperFunctions/win';
 import youLost from './helperFunctions/lost';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import About from './components/pages/About';
 
 
 export default function App() {
@@ -140,7 +141,7 @@ export default function App() {
           {/* <button onClick={youWin}> simulate a win</button>  */}
           <div id="animationhere"></div>
 
-          <Route path="/" render={props => (
+          <Route exact path="/" render={props => (
             
             <React.Fragment>
                  <Gamebar
@@ -153,7 +154,7 @@ export default function App() {
 
             </React.Fragment>
       )} />
-      
+          <Route exact path="/about" component={About}/>
          
           </div>
         <Board

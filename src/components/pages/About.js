@@ -1,9 +1,10 @@
 import React from 'react'
+import {Link} from 'react-router-dom';
 
-export default function About ({
+function About (){
   return (
     <div> 
-    <h1> About</h1>
+    <h2> About</h2>
     <p> This is the Memory card app made by :</p>
     <ul>
     <li>Toby</li>
@@ -11,6 +12,9 @@ export default function About ({
     <li>Jack</li>
     <li>Barri</li>
     </ul>
+    <Link className="about" to='/'>Home</Link>
     </div>
   )
+
 }
+export default  About;
