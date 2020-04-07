@@ -1,6 +1,5 @@
 import React from "react";
 
-
 const Gamebar = props => (
   <nav className="Gamebar">
     <div>
@@ -15,7 +14,7 @@ const Gamebar = props => (
           <div className="score">current score: <span>{props.score}/7</span></div>
         </li>  <li className="nav-item">
           <div className="wrongGuesses">incorrect guesses: <span>{props.wrongGuesses}/7</span></div>
-        </li>
+        </li><br/>
       </ul>
     </div>
   </nav>

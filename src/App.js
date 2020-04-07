@@ -1,13 +1,16 @@
-import React, { useState, useEffect} from 'react'
-import'./styles/App.scss';
+import React, { useState, useEffect } from 'react'
+import './styles/App.scss';
 import Board from './components/board/Board'
 import Gamebar from './components/Gamebar';
 import initializeDeck from './helperFunctions/deck'
 import youWin from './helperFunctions/win';
 import youLost from './helperFunctions/lost';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import About from './components/pages/About';
+import {Link} from 'react-router-dom';
 
 export default function App() {
-  const [cards, setCards]=useState([])
+  const [cards, setCards] = useState([])
   const [flipped, setFlipped] = useState([])
   const [dimension, setDimension] = useState(400)
   const [solved, setSolved] = useState([])
@@ -43,7 +46,7 @@ export default function App() {
     }
     else {
       if (sameCardClicked(id)) return
-      setFlipped([flipped[0],id])
+      setFlipped([flipped[0], id])
       if (isMatch(id)) {
         setSolved([...solved, flipped[0], id]);
         resetCards();
@@ -72,7 +75,7 @@ export default function App() {
   }
 
   const checkScore = (score) => {
-    if (score>6) {
+    if (score > 6) {
       youWin();
       setWins(wins + 1);
       setTimeout(newGame, 4000);
@@ -80,14 +83,14 @@ export default function App() {
   }
 
   const checkGuesses = (wrongGuesses) => {
-    if (wrongGuesses>6) {
+    if (wrongGuesses > 6) {
       youLost();
       setLosses(losses + 1);
       setTimeout(newGame, 3000);
     }
   }
 
-  const newGame = () => { 
+  const newGame = () => {
     setSolved([]);
     setCards(initializeDeck());
     showCards()
@@ -125,7 +128,7 @@ export default function App() {
     const flippedCard = cards.find((card) => flipped[0] === card.id)
     return flippedCard.type === clickedCard.type
   }
-  
+
   const resizeBoard = () => {
     setDimension(
       Math.min(
@@ -136,28 +139,38 @@ export default function App() {
   }
 
   return (
-    <div className="App">
-      <div className="fadebox">
-      <h1>mnemonic</h1>
-      <h2>can you remember where the cards are?</h2>
-      {/* if you want to see the animation uncomment this button */}
-      {/* <button onClick={youWin}> simulate a win</button>  */}
-      <div id="animationhere"></div>
-      <Gamebar 
-        wins={wins}
-        losses={losses}
-        score={score}
-        wrongGuesses={wrongGuesses}
-        newGame={newGame}
-      /></div>
-      <Board
-        dimension={dimension}
-        cards={cards}
-        flipped={flipped}
-        handleClick={handleClick}
-        disabled={disabled}
-        solved={solved}
-        />
-    </div>
-  )
+
+    <Router>
+      <Route exact path="/" render={props => (
+        <React.Fragment>
+          <div className="App">
+            <div class="fadebox">
+              <h1>mnemonic</h1>
+              <h2>can you remember where the cards are?</h2>
+              <Link className="about" to='/about'>about</Link>
+              <div id="animationhere"></div>
+              
+              <Gamebar
+                wins={wins}
+                losses={losses}
+                score={score}
+                wrongGuesses={wrongGuesses}
+                newGame={newGame}
+              />
+            </div>
+            
+            <Board
+              dimension={dimension}
+              cards={cards}
+              flipped={flipped}
+              handleClick={handleClick}
+              disabled={disabled}
+              solved={solved}
+            />
+          </div>
+        </React.Fragment>
+      )} />
+      <Route exact path="/about" component={About} />
+    </Router>
+  );
 }
