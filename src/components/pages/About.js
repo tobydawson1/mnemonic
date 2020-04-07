@@ -12,7 +12,7 @@ function About (){
     <li>Jack</li>
     <li>Barri</li>
     </ul>
-    <Link className="about" to='/'>Home</Link>
+    <Link className="about" to='/'>Back to the game</Link>
     </div>
   )
 

@@ -135,15 +135,17 @@ export default function App() {
     <Router>
       <div className="App">
         <div class="fadebox">
+        <Route exact path="/" render={props => (
+           <React.Fragment>
           <h1>mnemonic</h1>
           <h2>can you remember where the cards are?</h2>
           {/* if you want to see the animation uncomment this button */}
           {/* <button onClick={youWin}> simulate a win</button>  */}
           <div id="animationhere"></div>
 
-          <Route exact path="/" render={props => (
+          
             
-            <React.Fragment>
+           
                  <Gamebar
             wins={wins}
             losses={losses}

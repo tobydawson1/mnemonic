@@ -107,10 +107,14 @@ li {font-family: "chilanka", sans-serif;font-weight: 400;list-style: none; displ
   margin-top: 1em; border-radius: 10px;font-size: 1.4em;
   color:rgb(98, 24, 143);font-weight: 700; letter-spacing: 1px;
 text-shadow: 1px 1px 5px grey; span{color:rgb(67, 245, 171)}}
-.about{font-family: "chilanka", sans-serif;font-weight: 400;list-style: none; display: inline-flex; padding: 1em; 
-  margin-top: .2em; border-radius: 4px;font-size: 1.1em;
+
+.about{
+  font-family: "chilanka", sans-serif;font-weight: 400;
+  text-decoration: none;
+  list-style: none; display: inline-flex; padding: 1em; 
+  margin-top: .2em; border-radius: 4px;font-size: 1em;
   color:rgb(98, 24, 143);font-weight: 700; letter-spacing: 1px;
-text-shadow: 1px 1px 5px grey; span{color:rgb(67, 245, 171)}
+  text-shadow: 1px 1px 5px grey; span{color:rgb(67, 245, 171)}
 
 }
 
