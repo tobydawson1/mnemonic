@@ -1,2 +1,4 @@
 exclude_patterns:
 - "coverage/"
+- "src/helperFunctions/"
+- "src/components/Gamebar/"
