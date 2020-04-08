@@ -118,25 +118,26 @@ nav {
     padding-bottom: 0.5em;
   }
 }
-li {font-family: "chilanka", sans-serif;font-weight: 400;list-style: none; display: inline-flex; padding: 1em; 
-  margin-top: 1em; border-radius: 10px;font-size: 1.4em;
+li {font-family: "chilanka", sans-serif;font-weight: 400;
+  list-style: none; display: inline-flex; padding: 0.5em; 
+  border-radius: 10px;font-size: 1.4em;
   color:rgb(98, 24, 143);font-weight: 700; letter-spacing: 1px;
 text-shadow: 1px 1px 5px grey; span{color:rgb(67, 245, 171)}}
 
 .about{
   font-family: "chilanka", sans-serif;font-weight: 400;
-  text-decoration: none;
-  list-style: none; display: inline-flex; padding: 1em; 
-  margin-top: .2em; border-radius: 4px;font-size: 1em;
-  color:rgb(34, 106, 194); ;font-weight: 700; letter-spacing: 1px;
+  text-decoration: none; list-style: none; display: inline-flex; 
+  padding: 0.5em; border-radius: 4px; font-size: 1em;
+  color:rgb(34, 106, 194);font-weight: 700; letter-spacing: 1px;
   text-shadow: 1px 1px 5px grey; span{color:rgb(67, 245, 171)}
-
 }
 
 button {padding: 0.4em; padding-top:0.6em; font-family: "chilanka", sans-serif;
-  font-size:1.4em; cursor: pointer; letter-spacing: 2px;
+  font-size:1.4em; cursor: pointer; letter-spacing: 2px; margin: 1em;
   background-color: rgb(119, 29, 175);   color:rgb(67, 245, 171);
   border-radius: 10px; border: none; box-shadow: 1px 1px 5px rgb(82, 40, 91)}
+  
+  .about {color:rgb(34, 106, 194);}
 
   .About {
   text-align: center;
@@ -145,7 +146,8 @@ button {padding: 0.4em; padding-top:0.6em; font-family: "chilanka", sans-serif;
   background-size: cover;
   height: 100vh;
   padding: 3em;
-  .about { margin-top:1em; color:rgb(34, 106, 194); }
+  
+
   h2{
     a{font-family: "chilanka", sans-serif; color:rgb(34, 106, 194); 
       font-weight: 400; letter-spacing: 1px;padding-bottom: 
