@@ -19,6 +19,8 @@ export default function App() {
   const [losses, setLosses] = useState(0);
   const [seconds, setSeconds] = useState(30);
   const [isActive, setIsActive] = useState(false);
+  let gameTimer;
+  // window.startDate = undefined;
 
   useEffect(() => {
     resizeBoard()
@@ -78,25 +80,28 @@ export default function App() {
       youWin();
       setWins(wins + 1);
       setTimeout(newGame, 4000);
-      timerReset()
+      // timerReset()
     }
   }
 
-  const checkGuesses = (wrongGuesses) => {
-    if (wrongGuesses>6) {
+  const checkGuesses = (wrongGuesses ,nbOfSeconds) => {
+    if (wrongGuesses>6 || nbOfSeconds === 0) {
       youLost();
       loseThisGame() 
+      
     }
   }
 
   function loseThisGame() {
     setLosses(losses + 1);
     setTimeout(newGame, 3000);
-    timerReset()
+    // timerReset()
   }
 
   const newGame = () => {
-    setSeconds(30); 
+    // setSeconds(30);
+    clearTimeout(gameTimer); 
+    startTimer(15)
     setSolved([]);
     setCards(initializeDeck());
     showCards()
@@ -138,42 +143,75 @@ export default function App() {
       ),
     )
   }
-  //timer stuff
-  const Timer = () => {
-    useEffect(() => {
-      let interval = null;
-      if (isActive && seconds == 0){
-        timerReset();
-        timeUp();
-        loseThisGame();
-        clearInterval(interval);
-      } else if (isActive) {
-        interval = setInterval(() => {
-          setSeconds(seconds => seconds - 1);
-        }, 1000);}
-      else if (!isActive && seconds !== 0) {
-        clearInterval(interval);
-      }
-      return () => clearInterval(interval);
-    }, [isActive, seconds]);
-  
-    return (
-        <div className="timer"><h2>00:{seconds}</h2></div>
-    );
-  };
-  function timerReset() {
-    setSeconds(30);
-    setIsActive(false);
+
+
+  const startTimer = (nbOfSeconds) => {
+    window.startDate = Date.now()
+    let timerfunction = () => {
+      var timeEllapsed = Date.now() - window.startDate;
+      if(timeEllapsed > nbOfSeconds * 1000){
+        document.getElementById("countdown").innerHTML = "Finished";
+      } else {
+        var timeleft = nbOfSeconds - timeEllapsed / 1000;
+        document.getElementById("countdown").innerHTML = Math.round(timeleft) + " seconds remaining";
+        gameTimer = setTimeout(timerfunction, 25);
+        console.log(window.startDate)}
+    }
+    gameTimer = setTimeout(timerfunction, 25);
   }
-///end of timer
+
+
+   
+  
+  // var timeleft = 10;
+  // var downloadTimer = setInterval(function(){
+  // if(timeleft <= 0){
+  //   clearInterval(downloadTimer);
+  //   document.getElementById("countdown").innerHTML = "Finished";
+  // } else {
+  //   document.getElementById("countdown").innerHTML = timeleft + " seconds remaining";
+  // }
+  // timeleft -= 1;
+  // }, 1000);
+
+
+//   //timer stuff
+//   const Timer = () => {
+//     useEffect(() => {
+//       let interval = null;
+//       if (isActive && seconds == 0){
+//         timerReset();
+//         timeUp();
+//         loseThisGame();
+//         clearInterval(interval);
+//       } else if (isActive) {
+//         interval = setInterval(() => {
+//           setSeconds(seconds => seconds - 1);
+//         }, 1000);}
+//       else if (!isActive && seconds !== 0) {
+//         clearInterval(interval);
+//       }
+//       return () => clearInterval(interval);
+//     }, [isActive, seconds]);
+  
+//     return (
+//         <div className="timer"><h2>00:{seconds}</h2></div>
+//     );
+//   };
+//   function timerReset() {
+//     setSeconds(30);
+//     setIsActive(false);
+//   }
+// ///end of timer
 
   return (
     <div className="App">
       <div class="fadebox">
       <h1>mnemonic</h1>
       <h2>can you remember where the cards are?</h2>
+      <div id="countdown"></div>
       <div id="animationhere"></div>
-      <Timer/>
+      {/* <Timer/> */}
       <Navbar 
         wins={wins}
         losses={losses}
