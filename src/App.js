@@ -19,6 +19,7 @@ export default function App() {
   const [wrongGuesses, setWrongGuesses] = useState(0);
   const [losses, setLosses] = useState(0);
 
+
   useEffect(() => {
     resizeBoard()
   }, [])
@@ -92,13 +93,19 @@ export default function App() {
     setSolved([]);
     setCards(initializeDeck());
     showCards()
-    setTimeout(resetCards, 3000)
     setWrongGuesses(0);
     setScore(0);
   }
 
   const showCards = () => {
-    setFlipped([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13])
+    if (wins<4) {
+      setFlipped([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13])
+      setTimeout(resetCards, 3000)
+    } else if (wins<8) {
+      setFlipped([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13])
+      setTimeout(resetCards, 1500)
+    } else {
+    }
   }
 
   const preloadImages = () => {
@@ -131,6 +138,7 @@ export default function App() {
   }
 
   return (
+
     <Router>
       <Route exact path="/" render={props => (
         <React.Fragment>
@@ -164,4 +172,3 @@ export default function App() {
     </Router>
   );
 }
-
