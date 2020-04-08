@@ -1,10 +1,13 @@
 import React from "react";
+import {Link} from 'react-router-dom';
 
 const Gamebar = props => (
   <nav className="Gamebar">
     <div>
     <button className="restart" onClick={() => props.newGame()}>
-            new game</button>
+            new game</button> <br></br>
+      <Link className="about" to='/about'>about</Link>
+    
       <ul className="gamebar-nav">
         <li className="nav-item">
           <div className="wins">wins: <span>{props.wins}</span> </div>

@@ -23,6 +23,7 @@ function About() {
         <br></br>
         <p>Please checkout the link below for more details on the project.</p> <br></br>
         <h2><a href="https://github.com/tobydawson1/mnemonic">mnemonic on github</a></h2>
+        <br></br>
         <Link className="about" to='/'>Back to the game</Link>
       </div>
     </div>
