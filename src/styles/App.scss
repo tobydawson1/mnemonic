@@ -35,7 +35,9 @@ body {
     font-family: "chilanka", sans-serif; color: rgb(67, 245, 171); font-weight: 400; font-size:2em;
   }
 }
-.board {  height: 100vh;
+.board {  
+  padding-bottom: 10em;
+  height: 100%;
   width: 80vw;
   transform: translateX(10%);
 }
