@@ -4,7 +4,7 @@
 
 <div align="center">
 
-[the idea](#idea) | [play](#play) | [features](#features) | [tech](#tech) | [goals](#goals) | [installation](#installation) | [testing](#testing) | [people](#collaborators) 
+[the idea](#idea) | [play](#play) | [features](#features) | [looks](#looks) | [tech](#tech) | [goals](#goals) | [installation](#installation) | [testing](#testing) | [people](#collaborators) 
 
 </div>
 
@@ -30,6 +30,10 @@ A single-page web app game, based on the classic memory / matching cards game. <
 - [x] If you don't, you lose this round, and the game will reset, by shuffling the cards and giving you another shot.
 - [x] The round is won when you match all 14 cards.
 - [x] As you progress through the rounds, the revealing time shortens: after 4 wins you will only get 1 second of reveal, and after 8 wins you get none!
+
+## <a name="looks">looks</a>
+
+<img src="./public/one.png" width="400"/>  <img src="./public/two.png" width="400"/>
 
 ## <a name="tech">technologies used</a>
 
