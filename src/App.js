@@ -18,6 +18,7 @@ export default function App() {
   const [wins, setWins] = useState(0);
   const [wrongGuesses, setWrongGuesses] = useState(0);
   const [losses, setLosses] = useState(0);
+  let gameTimer;
 
 
   useEffect(() => {
@@ -74,22 +75,30 @@ export default function App() {
   }
 
   const checkScore = (score) => {
-    if (score > 6) {
+    if (score > 6 ) {
       youWin();
       setWins(wins + 1);
       setTimeout(newGame, 4000);
     }
   }
 
-  const checkGuesses = (wrongGuesses) => {
-    if (wrongGuesses > 6) {
+  const checkGuesses = (wrongGuesses ,timeleft ) => {
+    if( timeleft <= 0 )
+    { youLost();
+      setLosses(losses + 1);
+      setTimeout(newGame, 3000);
+    } 
+    else if (wrongGuesses > 2 ) {
       youLost();
       setLosses(losses + 1);
       setTimeout(newGame, 3000);
     }
+    setTimeout(newGame, 3000);
   }
 
   const newGame = () => {
+    clearTimeout(gameTimer); 
+    startTimer(10)
     setSolved([]);
     setCards(initializeDeck());
     showCards()
@@ -137,6 +146,22 @@ export default function App() {
     )
   }
 
+  const startTimer = (nbOfSeconds) => {
+    window.startDate = Date.now()
+    let timerfunction = () => {
+      var timeEllapsed = Date.now() - window.startDate;
+      if(timeEllapsed > nbOfSeconds * 1000){
+        document.getElementById("countdown").innerHTML = "Finished";
+      } else {
+        var timeleft = nbOfSeconds - timeEllapsed / 1000;
+        document.getElementById("countdown").innerHTML = Math.round(timeleft) + " seconds remaining";
+        gameTimer = setTimeout(timerfunction, 25);
+        console.log(window.startDate)}
+    }
+    gameTimer = setTimeout(timerfunction, 25);
+  }
+
+
   return (
 
     <Router>
@@ -147,7 +172,7 @@ export default function App() {
               <h1>mnemonic</h1>
               <h2>can you remember where the cards are?</h2>
               <div id="animationhere"></div>
-              
+              <div id="countdown"></div>
               <Gamebar
                 wins={wins}
                 losses={losses}
